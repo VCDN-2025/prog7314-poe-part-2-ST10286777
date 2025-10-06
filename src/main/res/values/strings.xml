@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Trivora</string>
+
+    <string name="default_web_client_id">
+    521674034377-nlt0dkuunvoabed9bo52mqetmiqme3qv.apps.googleusercontent.com
+</string>
+
+</resources>

@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:background="@drawable/bg_gradient"
+    android:padding="24dp">
+
+    <ImageView
+        android:id="@+id/logoImage"
+        android:layout_width="220dp"
+        android:layout_height="220dp"
+        android:src="@drawable/trivora_logo"
+        android:layout_marginBottom="16dp"
+        android:contentDescription="@string/app_name" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="273dp"
+        android:layout_marginBottom="24dp"
+        android:background="@drawable/black_card_bg"
+        android:elevation="6dp"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <TextView
+            android:layout_width="200dp"
+            android:layout_height="55dp"
+            android:layout_marginBottom="16dp"
+            android:text="Login"
+            android:textColor="@android:color/white"
+            android:textSize="28sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/emailEt"
+            android:layout_width="350dp"
+            android:layout_height="55dp"
+            android:layout_marginBottom="12dp"
+            android:background="@null"
+            android:hint="Email"
+            android:inputType="textEmailAddress"
+            android:textColor="@android:color/white"
+            android:textColorHint="#B3B3B3" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#B3B3B3" />
+
+        <EditText
+            android:id="@+id/passET"
+            android:layout_width="350dp"
+            android:layout_height="55dp"
+            android:layout_marginTop="12dp"
+            android:background="@null"
+            android:hint="Password"
+            android:inputType="textPassword"
+            android:textColor="@android:color/white"
+            android:textColorHint="#B3B3B3" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#B3B3B3" />
+
+    </LinearLayout>
+
+    <!-- Buttons -->
+    <Button
+        android:id="@+id/button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Login with Email"
+        android:textAllCaps="false"
+        android:background="@drawable/rounded_button_white"
+        android:textColor="#FFFFFF"
+        android:layout_marginBottom="12dp" />
+
+
+    <com.google.android.gms.common.SignInButton
+        android:id="@+id/googleSignInBtn"
+        android:layout_width="142dp"
+        android:layout_height="43dp"
+        android:layout_gravity="center" />
+
+    <LinearLayout
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="8dp">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="242dp"
+            android:layout_height="75dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="24dp"
+            android:text="Not Registered Yet? Sign Up!"
+            android:textColor="#FFFFFF"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+</LinearLayout>
