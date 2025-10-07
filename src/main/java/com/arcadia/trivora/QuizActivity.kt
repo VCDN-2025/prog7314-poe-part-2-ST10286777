@@ -36,7 +36,6 @@ class QuizActivity : AppCompatActivity() {
             // Random quiz - use pre-loaded questions from intent
             val questions = intent.getSerializableExtra("QUESTIONS") as? ArrayList<Question>
             if (questions != null && questions.isNotEmpty()) {
-                // Set appropriate title based on mode
                 binding.categoryTitle.text = when (quizMode) {
                     "RANDOM_SINGLE" -> "Random Question"
                     "RANDOM_QUIZ" -> "Random Quiz"
@@ -141,12 +140,17 @@ class QuizActivity : AppCompatActivity() {
         question.choices.forEachIndexed { index, choice ->
             val radioButton = RadioButton(this).apply {
                 text = choice
-                setTextColor(Color.BLACK)
+                setTextColor(Color.parseColor("#333333"))
                 textSize = 16f
-                setPadding(32, 32, 32, 32)
-
-                // Set background for better visibility
-                setBackgroundResource(android.R.drawable.btn_default)
+                setPadding(16, 20, 16, 20)
+                setBackgroundResource(R.drawable.custom_radio_button)
+                buttonDrawable = null // Removes default circular button
+                layoutParams = RadioGroup.LayoutParams(
+                    RadioGroup.LayoutParams.MATCH_PARENT,
+                    RadioGroup.LayoutParams.WRAP_CONTENT
+                ).apply {
+                    setMargins(0, 8, 0, 8)
+                }
 
                 // Check if this is the selected answer
                 isChecked = choice == state.selectedAnswer
@@ -167,24 +171,21 @@ class QuizActivity : AppCompatActivity() {
         binding.feedbackText.visibility = View.VISIBLE
         if (isCorrect) {
             binding.feedbackText.text = "Correct!"
-            binding.feedbackText.setTextColor(Color.GREEN)
+            binding.feedbackText.setBackgroundColor(Color.parseColor("#4CAF50"))
+            binding.feedbackText.setTextColor(Color.WHITE)
         } else {
-            binding.feedbackText.text = "Incorrect! The correct answer was: ${question.answer}"
-            binding.feedbackText.setTextColor(Color.RED)
+            binding.feedbackText.text = "Wrong answer! The correct answer was: ${question.answer}"
+            binding.feedbackText.setBackgroundColor(Color.parseColor("#D32F2F"))
+            binding.feedbackText.setTextColor(Color.WHITE)
         }
 
         // Disable all radio buttons after submission
         for (i in 0 until binding.choicesRadioGroup.childCount) {
             val radioButton = binding.choicesRadioGroup.getChildAt(i) as RadioButton
             radioButton.isEnabled = false
-
-            // Highlight correct answer
-            if (radioButton.text == question.answer) {
-                radioButton.setBackgroundColor(Color.argb(50, 0, 255, 0)) // Light green
-            } else if (radioButton.text == state.selectedAnswer && !isCorrect) {
-                radioButton.setBackgroundColor(Color.argb(50, 255, 0, 0)) // Light red
-            }
         }
+
+        binding.submitButton.isEnabled = false
     }
 
     private fun showQuizCompletion(state: QuizState) {

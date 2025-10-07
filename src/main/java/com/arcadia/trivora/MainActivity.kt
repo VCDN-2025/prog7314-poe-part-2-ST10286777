@@ -48,11 +48,13 @@ class MainActivity : AppCompatActivity() {
                 R.id.nav_random_quiz -> {
                     val intent = Intent(this@MainActivity, RandomQuizActivity::class.java)
                     startActivity(intent)
-                    true
+
                     true
                 }
                 R.id.nav_settings -> {
-                    // Load SettingsFragment
+                    val intent = Intent(this@MainActivity, SettingsActivity::class.java)
+                    startActivity(intent)
+
                     true
                 }
                 R.id.nav_profile -> {

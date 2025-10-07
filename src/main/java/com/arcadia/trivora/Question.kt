@@ -1,5 +1,7 @@
 package com.arcadia.trivora
 
+import java.io.Serializable
+
 data class Question(
     val questionId: String,
     val category: String,
@@ -7,4 +9,4 @@ data class Question(
     val choices: List<String>,
     val answer: String,
     val difficulty: String
-)
+) : Serializable

@@ -34,11 +34,15 @@ class ProfileActivity : AppCompatActivity() {
                     true
                 }
                 R.id.nav_random_quiz -> {
-                    // Load RandomQuizFragment
+                    val intent = Intent(this@ProfileActivity, RandomQuizActivity::class.java)
+                    startActivity(intent)
+
                     true
                 }
                 R.id.nav_settings -> {
-                    // Load SettingsFragment
+                    val intent = Intent(this@ProfileActivity, SettingsActivity::class.java)
+                    startActivity(intent)
+
                     true
                 }
                 R.id.nav_profile -> {

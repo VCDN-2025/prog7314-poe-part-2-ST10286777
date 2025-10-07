@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-permission android:name="android.permission.VIBRATE" />
     <application
         android:name=".TrivoraApp"
         android:allowBackup="true"
@@ -13,6 +14,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Trivora"
         android:networkSecurityConfig="@xml/network_security_config">
+
         <activity
             android:name=".RegisterActivity"
             android:exported="false" />
@@ -28,6 +30,9 @@
 
         <activity
             android:name=".MainActivity"
+            android:exported="true" />
+        <activity
+            android:name=".SettingsActivity"
             android:exported="true" />
         <activity
             android:name=".QuizActivity"

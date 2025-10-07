@@ -6,6 +6,7 @@ import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import com.arcadia.trivora.databinding.ActivityRandomQuizBinding
+import java.io.Serializable
 
 class RandomQuizActivity : AppCompatActivity() {
 
@@ -19,6 +20,7 @@ class RandomQuizActivity : AppCompatActivity() {
 
         setupClickListeners()
         setupObservers()
+
     }
 
     private fun setupClickListeners() {
@@ -38,9 +40,8 @@ class RandomQuizActivity : AppCompatActivity() {
     private fun setupObservers() {
         viewModel.randomQuestion.observe(this) { question ->
             question?.let {
-                // Start QuizActivity with the single random question
                 val intent = Intent(this, QuizActivity::class.java).apply {
-                    putExtra("QUESTIONS", arrayListOf(it))
+                    putExtra("QUESTIONS", arrayListOf(it) as Serializable)
                     putExtra("QUIZ_MODE", "RANDOM_SINGLE")
                 }
                 startActivity(intent)
@@ -49,9 +50,8 @@ class RandomQuizActivity : AppCompatActivity() {
 
         viewModel.randomQuestions.observe(this) { questions ->
             if (questions.isNotEmpty()) {
-                // Start QuizActivity with multiple random questions
                 val intent = Intent(this, QuizActivity::class.java).apply {
-                    putExtra("QUESTIONS", ArrayList(questions))
+                    putExtra("QUESTIONS", ArrayList(questions) as Serializable)
                     putExtra("QUIZ_MODE", "RANDOM_QUIZ")
                 }
                 startActivity(intent)

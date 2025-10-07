@@ -7,7 +7,7 @@
     android:background="@drawable/bg_gradient"
     android:padding="16dp">
 
-    <!-- Quiz Header -->
+
     <TextView
         android:id="@+id/categoryTitle"
         android:layout_width="match_parent"
@@ -19,7 +19,6 @@
         android:gravity="center"
         android:layout_marginBottom="16dp" />
 
-    <!-- Progress -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -46,7 +45,6 @@
             android:textStyle="bold" />
     </LinearLayout>
 
-    <!-- Question Card -->
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -61,7 +59,6 @@
             android:orientation="vertical"
             android:padding="20dp">
 
-            <!-- Question Text -->
             <TextView
                 android:id="@+id/questionText"
                 android:layout_width="match_parent"
@@ -72,20 +69,18 @@
                 android:textStyle="bold"
                 android:layout_marginBottom="24dp" />
 
-            <!-- Choices -->
             <RadioGroup
                 android:id="@+id/choicesRadioGroup"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-                <!-- Radio buttons will be added dynamically -->
+
             </RadioGroup>
 
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
-    <!-- Feedback Message -->
     <TextView
         android:id="@+id/feedbackText"
         android:layout_width="match_parent"
@@ -93,12 +88,14 @@
         android:text=""
         android:textColor="@android:color/white"
         android:textSize="16sp"
-        android:textStyle="bold"
         android:gravity="center"
         android:visibility="gone"
+        android:background="@drawable/feedback_background"
+        android:padding="12dp"
+        android:layout_marginTop="8dp"
         android:layout_marginBottom="16dp" />
 
-    <!-- Action Buttons -->
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

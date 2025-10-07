@@ -40,10 +40,13 @@ object RetrofitClient {
 
     val instance: ApiService by lazy {
         Retrofit.Builder()
-            .baseUrl("http://10.0.2.2:3000/")
+            .baseUrl("https://trivora-api.onrender.com/")
             .addConverterFactory(GsonConverterFactory.create())
             .client(client)
             .build()
             .create(ApiService::class.java)
     }
+
+    //Localhost
+    //baseUrl("http://10.0.2.2:3000/")
 }
