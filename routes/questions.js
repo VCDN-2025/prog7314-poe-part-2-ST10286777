@@ -12,8 +12,9 @@ router.get('/category/:category', questionController.getQuestionsByCategory);
 router.get('/categories', questionController.getCategories); 
 router.put('/:questionId', questionController.updateQuestion);
 router.delete('/:questionId', questionController.deleteQuestion);
+router.get('/random', questionController.getRandomQuestion); // Single random question
+router.get('/random/:count', questionController.getRandomQuestions); // Multiple random questions
 router.get('/:questionId', questionController.getQuestionById);
-router.get('/random', questionController.getRandomQuestion); 
-router.get('/random/:count', questionController.getRandomQuestions); 
+
 
 export default router;
