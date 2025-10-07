@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:gravity="center_horizontal"
     android:background="@drawable/bg_gradient"
@@ -67,21 +68,23 @@
 
     </LinearLayout>
 
-    <!-- Buttons -->
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Login with Email"
-        android:textAllCaps="false"
-        android:background="@drawable/rounded_button_white"
-        android:textColor="#FFFFFF"
-        android:layout_marginBottom="12dp" />
+        android:textColor="@android:color/white"
+        android:backgroundTint="#FF6B6B"
+        android:layout_marginTop="8dp"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:cornerRadius="12dp" />
 
 
     <com.google.android.gms.common.SignInButton
         android:id="@+id/googleSignInBtn"
         android:layout_width="142dp"
+        android:layout_marginTop="10dp"
         android:layout_height="43dp"
         android:layout_gravity="center" />
 
