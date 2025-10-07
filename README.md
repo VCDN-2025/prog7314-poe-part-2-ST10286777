@@ -83,6 +83,20 @@ It combines **education, competition, and personalization** by allowing users to
 
 ---
 
-## 🧱 System Architecture
+## 🧰 GitHub & GitHub Actions Usage
+
+### 🗂️ Version Control with GitHub
+GitHub was utilized for:
+- **Source code management** and team collaboration.  
+- **Branching strategy** for development, testing, and production.  
+- **Pull Requests** for code reviews before merging to `main`.
+
+Each feature was developed in its own branch, ensuring clean integration and reducing merge conflicts.
+
+### 🤖 Continuous Integration with GitHub Actions
+GitHub Actions was configured to:
+- Automatically **build the project** and **run tests** when changes are pushed.  
+- Detect build issues early across environments.  
+- Generate APK builds and upload them as **artifacts** for easy testing.
 
 
